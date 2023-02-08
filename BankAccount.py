@@ -22,10 +22,11 @@ class BankAccount:
     def yield_interest(self):
         if self.balance > 0:
             self.balance += (self.balance * self.int_rate)
-            print(f"The balance that include interest: {self.balance}")
         return self
     
-myAccount= BankAccount(0.2,100)
-myAccount.deposit(2000).withdraw(1000).display_account_info().yield_interest()
+myAccount= BankAccount(0.02,100)
+secondAccount= BankAccount(0.01,200)
+myAccount.deposit(2000).deposit(1000).deposit(1000).withdraw(2500).yield_interest().display_account_info()
+secondAccount.deposit(5000).deposit(1000).withdraw(500).withdraw(500).withdraw(500).withdraw(2500).yield_interest().display_account_info()
 
 
